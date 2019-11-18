@@ -11,12 +11,15 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/inu?serverTimezone=UTC
-    username: root
-    password: cbf26266
+    url: jdbc:mysql://38.109.217.119:3306/myinu?serverTimezone=UTC
+    username: tjjjj
+    password: niconicocbf/daas
     initialization-mode: always
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
 spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+spring.servlet.multipart:
+  max-file-size: 128KB
+  max-request-size: 128KB
