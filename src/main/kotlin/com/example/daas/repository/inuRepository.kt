@@ -2,7 +2,7 @@ package com.example.daas.repository
 
 import com.example.daas.domin.Inu
 import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
 
-interface InuRepository:JpaRepository<Inu,Long> {
-    fun findInuById(id:Int):List<Inu>
-}
+@Repository
+interface InuRepository:JpaRepository<Inu,Long>

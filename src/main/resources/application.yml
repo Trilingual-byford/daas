@@ -11,8 +11,8 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://38.109.217.119:3306/myinu?serverTimezone=UTC
-    username: tjjjj
+    url: jdbc:mysql://38.109.217.119:3306/inu?serverTimezone=UTC
+    username: daas3
     password: niconicocbf/daas
     initialization-mode: always
   jpa:
