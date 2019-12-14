@@ -11,5 +11,5 @@ interface StorageService {
     fun loadAll():Stream<Path>
     fun load(filename:String ):Path
     fun loadAsResource(filename: String):Resource
-//    fun deleteAll()
+    fun deleteAll()
 }

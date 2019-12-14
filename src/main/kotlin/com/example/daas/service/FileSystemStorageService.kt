@@ -82,8 +82,8 @@ class FileSystemStorageService : StorageService {
        }
 
     }
-//
-//    override fun deleteAll() {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//    }
+
+    override fun deleteAll() {
+        //To change body of created functions use File | Settings | File Templates.
+    }
 }

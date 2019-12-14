@@ -16,6 +16,7 @@ import org.springframework.http.HttpHeaders
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 import com.example.daas.service.StorageService
+import org.springframework.http.HttpStatus
 import kotlin.streams.toList
 
 @Controller
@@ -54,6 +55,7 @@ class FileUploadController @Autowired constructor(val storageService: StorageSer
 
     @ExceptionHandler(StorageFileNotFoundException::class)
     fun handleStorageFileNotFound(exc: StorageFileNotFoundException): ResponseEntity<*> {
-        return ResponseEntity.notFound().build<Any>()
+//        return ResponseEntity.notFound().build<Any>()
+        return ResponseEntity.status(HttpStatus.OK).build<Any>()
     }
 }

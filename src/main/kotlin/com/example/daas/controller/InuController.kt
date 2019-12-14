@@ -3,12 +3,17 @@ package com.example.daas.controller
 import com.example.daas.domin.Gender
 import com.example.daas.domin.Inu
 import com.example.daas.repository.InuRepository
+import exception.StorageFileNotFoundException
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
+import java.util.*
 
 @RestController
+@RequestMapping("/api/v1/")
 class InuController {
     var inuRepository: InuRepository
     @Autowired
@@ -17,19 +22,27 @@ class InuController {
     }
     @ResponseBody
     @RequestMapping(value= arrayOf("/{id}"),method = arrayOf(RequestMethod.GET))
-    fun findDogById(@PathVariable("id")id:String, model:Model):Inu{
-        return Inu(1000,"haa",66,11,Gender.Female,100,10,"NO")
+    fun findDogById(@PathVariable("id")id:Long, model:Model): ResponseEntity<Optional<Inu>> {
+        val responseEntity = ResponseEntity<Inu>(HttpStatus.OK)
+        throw StorageFileNotFoundException("mei zhaodao")
+        val inuInstance = inuRepository.findById(id)
+        return ResponseEntity(inuInstance,HttpStatus.CONFLICT);
     }
     @ResponseBody
-    @RequestMapping(path= arrayOf("/all"),method = arrayOf(RequestMethod.GET))
+    @RequestMapping(path= arrayOf("/allInu"),method = arrayOf(RequestMethod.GET))
     fun findAllDog(model:Model):List<Inu>{
         return inuRepository.findAll()
     }
     @ResponseBody
-    @RequestMapping(value= arrayOf("/greetinginu"),method = arrayOf(RequestMethod.POST))
+    @RequestMapping(value= arrayOf("/greetingInu"),method = arrayOf(RequestMethod.POST))
     fun greetingInus(@RequestBody model:Inu):Inu{
-//        val likes = model.likes
         inuRepository.save(model)
         return model
+    }
+    @ResponseBody
+    @RequestMapping(value= arrayOf("/deleteInu"),method = arrayOf(RequestMethod.POST))
+    fun deleteInu(@RequestBody id:Long):String{
+        inuRepository.deleteById(id)
+        return "Id:$id Inu is gone by now"
     }
 }
