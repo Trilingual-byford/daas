@@ -23,8 +23,6 @@ class InuController {
     @ResponseBody
     @RequestMapping(value= arrayOf("/{id}"),method = arrayOf(RequestMethod.GET))
     fun findDogById(@PathVariable("id")id:Long, model:Model): ResponseEntity<Optional<Inu>> {
-        val responseEntity = ResponseEntity<Inu>(HttpStatus.OK)
-        throw StorageFileNotFoundException("mei zhaodao")
         val inuInstance = inuRepository.findById(id)
         return ResponseEntity(inuInstance,HttpStatus.CONFLICT);
     }
