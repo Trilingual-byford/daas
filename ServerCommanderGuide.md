@@ -14,3 +14,10 @@
 ##### CREATE USER 'daas'@'%' IDENTIFIED BY 'password'
 ### Grant user access:
 ##### GRANT ALL ON *.* TO 'lol'@'%' WITH GRANT OPTION;
+### ServerIp:137.220.184.156
+### Check UserList
+##### SELECT host, user FROM mysql.user;
+### Grant Privilege
+##### GRANT ALL PRIVILEGES ON daas.* TO 'daas'@'%';
+
+
