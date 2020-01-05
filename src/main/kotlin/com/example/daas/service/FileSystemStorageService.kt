@@ -2,10 +2,7 @@ package com.example.daas.service
 
 import exception.StorageException
 import exception.StorageFileNotFoundException
-import org.apache.tomcat.jni.File
-import org.aspectj.weaver.tools.cache.SimpleCacheFactory.path
 import java.io.IOException
-import java.io.InputStream
 import java.net.MalformedURLException
 import java.nio.file.Files
 import java.nio.file.Path
@@ -17,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.core.io.Resource
 import org.springframework.core.io.UrlResource
 import org.springframework.stereotype.Service
-import org.springframework.util.FileSystemUtils
 import org.springframework.util.StringUtils
 import org.springframework.web.multipart.MultipartFile
 
@@ -25,9 +21,10 @@ import org.springframework.web.multipart.MultipartFile
 class FileSystemStorageService : StorageService {
     lateinit var rootLocation: Path
     @Autowired
-    fun fileSystemStorageService(properties: StorageProperties){
-        this.rootLocation=Paths.get(properties.location)
+    fun fileSystemStorageService(properties: StorageProperties) {
+        this.rootLocation = Paths.get(properties.location)
     }
+
     override fun init() {
         try {
             Files.createDirectories(rootLocation)
@@ -56,11 +53,11 @@ class FileSystemStorageService : StorageService {
 
     override fun loadAll(): Stream<Path> {
         try {
-            return Files.walk(this.rootLocation,1)
-                    .filter { path->!path.equals(this.rootLocation) }
+            return Files.walk(this.rootLocation, 1)
+                    .filter { path -> !path.equals(this.rootLocation) }
                     .map(this.rootLocation::relativize)
-        }catch (e:IOException){
-            throw StorageException("Failed to read stored files",e)
+        } catch (e: IOException) {
+            throw StorageException("Failed to read stored files", e)
         }
     }
 
@@ -69,17 +66,17 @@ class FileSystemStorageService : StorageService {
     }
 
     override fun loadAsResource(filename: String): Resource {
-       try {
-           val file = load(filename)
-           val resource = UrlResource(file.toUri())
-           if (resource.exists()||resource.isReadable){
-               return  resource
-           }else{
-               throw StorageFileNotFoundException("Could not read file:$filename")
-           }
-       } catch (e:MalformedURLException){
-           throw StorageFileNotFoundException("Could not read file:$filename",e)
-       }
+        try {
+            val file = load(filename)
+            val resource = UrlResource(file.toUri())
+            if (resource.exists() || resource.isReadable) {
+                return resource
+            } else {
+                throw StorageFileNotFoundException("Could not read file:$filename")
+            }
+        } catch (e: MalformedURLException) {
+            throw StorageFileNotFoundException("Could not read file:$filename", e)
+        }
 
     }
 

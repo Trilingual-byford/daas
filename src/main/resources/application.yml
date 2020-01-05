@@ -11,9 +11,9 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://38.109.217.119/inu?serverTimezone=UTC
-    username: daasXXX
-    password: 111111
+    url: jdbc:mysql://137.220.184.156/daas?serverTimezone=UTC
+    username: daas
+    password: ccc26266
     initialization-mode: always
   jpa:
     hibernate.ddl-auto: update

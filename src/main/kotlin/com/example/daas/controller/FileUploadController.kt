@@ -1,6 +1,5 @@
 package com.example.daas.controller
 
-//import sun.security.x509.OIDMap.addAttribute
 import com.example.daas.service.StorageService
 import exception.StorageFileNotFoundException
 import org.springframework.beans.factory.annotation.Autowired
@@ -15,8 +14,6 @@ import org.springframework.web.multipart.MultipartFile
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
 import java.io.IOException
-import java.nio.file.Path
-import java.util.stream.Collectors
 import kotlin.streams.toList
 
 
@@ -55,7 +52,6 @@ class FileUploadController @Autowired constructor(val storageService: StorageSer
 
     @ExceptionHandler(StorageFileNotFoundException::class)
     fun handleStorageFileNotFound(exc: StorageFileNotFoundException): ResponseEntity<*> {
-//        return ResponseEntity.notFound().build<Any>()
         return ResponseEntity.status(HttpStatus.OK).build<Any>()
     }
 }

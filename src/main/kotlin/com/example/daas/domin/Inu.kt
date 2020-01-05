@@ -1,20 +1,18 @@
 package com.example.daas.domin
-import jdk.jfr.Name
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
+
 @Entity
 data class Inu(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        val id: Long,
-        var dir: String,
-        val width: Int,
-        val height: Int,
-        val gender: Gender,
-        val picSize: Long,
-        var likes: Long,
-        val attribution:String)
+        val id: Long?=null,
+        var dir: String?=null,
+        val width: Int?=null,
+        val height: Int?=null,
+        val gender: Gender?=null,
+        val picSize: Long?=null,
+        var likes: Long?=null,
+        @ElementCollection
+        val attribution:List<String>?=null)
 
 enum class Gender { Male, Female, Unknown }
