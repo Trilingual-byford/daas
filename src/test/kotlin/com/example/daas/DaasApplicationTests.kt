@@ -19,9 +19,6 @@ class DaasApplicationTests {
 	}
 	@Test
 	fun fileLocation(){
-		val currentDir: Path = Paths.get(".") // currentDir = "."
-
-		val toAbsolutePath = currentDir.toAbsolutePath();
 
 	}
 

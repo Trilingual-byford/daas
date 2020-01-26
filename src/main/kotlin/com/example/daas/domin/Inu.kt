@@ -1,9 +1,12 @@
 package com.example.daas.domin
+import org.hibernate.validator.constraints.UniqueElements
 import javax.persistence.*
 
 @Entity
 data class Inu(
         @Id
+        @PrimaryKeyJoinColumn
+        @UniqueElements
         @GeneratedValue(strategy = GenerationType.AUTO)
         val id: Long?=null,
         var dir: String?=null,

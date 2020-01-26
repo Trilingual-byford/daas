@@ -1,5 +1,14 @@
-create table if not exists inu (
- id varchar(4) not null,
- name varchar(25) not null,
- type varchar(10) not null
-);
+
+create table inu (id bigint not null, dir varchar(255), gender integer, height integer, likes bigint, pic_size bigint, width integer, primary key (id))
+create table inu_attribution (inu_id bigint not null, attribution varchar(255))
+-- CREATE TABLE inu_attribution (inu_id bigint not null,attribution varchar(255))
+-- CREATE TABLE inu(
+--     id bigint PRIMARY KEY AUTO_INCREMENT,
+--     dir varchar(255),
+--     gender integer ,
+--     height integer ,
+--     likes bigint,
+--     pic_size bigint,
+--     width integer,
+-- )
+alter table inu_attribution add constraint FKlyf4slpxp19vay0gan2ei3rdq foreign key (inu_id) references inu

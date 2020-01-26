@@ -21,6 +21,7 @@ import kotlin.streams.toList
 class FileUploadController @Autowired constructor(val storageService: StorageService) {
     @GetMapping("/file")
     @Throws(IOException::class)
+    @RequestMapping
     fun listUploadedFiles(model: Model): String {
         model.addAttribute("files", storageService.loadAll().map { path ->
             MvcUriComponentsBuilder.fromMethodName(FileUploadController::class.java, "serveFile",
