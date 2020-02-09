@@ -1,4 +1,4 @@
-package com.example.daas.service
+package com.example.daas.service.storage
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 

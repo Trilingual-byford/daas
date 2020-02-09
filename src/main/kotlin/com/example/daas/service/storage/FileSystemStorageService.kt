@@ -1,4 +1,4 @@
-package com.example.daas.service
+package com.example.daas.service.storage
 
 import exception.StorageException
 import exception.StorageFileNotFoundException

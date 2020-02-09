@@ -39,4 +39,4 @@ management:
 logging:
   level.root: info
   pattern:
-    console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M %caller{1}%L - %msg%n"
+    console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"

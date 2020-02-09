@@ -1,6 +1,6 @@
 package com.example.daas.controller
 
-import com.example.daas.service.StorageService
+import com.example.daas.service.storage.StorageService
 import exception.StorageFileNotFoundException
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.core.io.Resource

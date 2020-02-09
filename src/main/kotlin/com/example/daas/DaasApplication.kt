@@ -1,7 +1,7 @@
 package com.example.daas
 
-import com.example.daas.service.StorageProperties
-import com.example.daas.service.StorageService
+import com.example.daas.service.storage.StorageProperties
+import com.example.daas.service.storage.StorageService
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.boot.CommandLineRunner
