@@ -1,0 +1,2 @@
+### The differences between JPA(Java persistence API) and Mybatis
+###### Mapping java objects to database tables and vice versa is called Object-relational mapping.The Java Persistence is one possible approach to ORM.JPA permits the developer to work directly with objects rather than with SQL statements.DescriptionThe Java Persistence API, in 2019 renamed to Jakarta Persistence, is a Java application programming interface specification that describes the management of relational data in applications。
