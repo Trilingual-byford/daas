@@ -1,5 +1,5 @@
 
-create table inu (id bigint not null, dir varchar(255), gender integer, height integer, likes bigint, pic_size bigint, width integer, primary key (id))
+create table inu (id bigint not null,created_time DATE, dir varchar(255), gender integer, height integer, likes bigint, pic_size bigint, width integer, primary key (id))
 create table inu_attribution (inu_id bigint not null, attribution varchar(255))
 -- CREATE TABLE inu_attribution (inu_id bigint not null,attribution varchar(255))
 -- CREATE TABLE inu(

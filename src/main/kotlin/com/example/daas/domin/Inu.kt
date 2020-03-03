@@ -1,5 +1,6 @@
 package com.example.daas.domin
 import org.hibernate.validator.constraints.UniqueElements
+import java.util.Date
 import javax.persistence.*
 
 @Entity
@@ -9,6 +10,7 @@ data class Inu(
         @UniqueElements
         @GeneratedValue(strategy = GenerationType.AUTO)
         var id: Long?=null,
+        val createdTime:Date,
         var dir: String?=null,
         var width: Int?=null,
         var height: Int?=null,
