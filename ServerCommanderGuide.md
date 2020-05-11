@@ -19,5 +19,7 @@
 ##### SELECT host, user FROM mysql.user;
 ### Grant Privilege：
 ##### GRANT ALL PRIVILEGES ON daas.* TO 'daas'@'%';
+### Create DataBase
+mysql> CREATE DATABASE menagerie;
 
 
